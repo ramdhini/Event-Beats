@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventBeast</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/scss/history.css" />
+</head>
+
+<body>
+
+    <header class="header bg-navy">
+        <!-- START: NAVBAR -->
+        <nav class="container navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="index.php" style="display: flex;">
+                    <div class = "back-container">
+                        <img src="assets/images/back-btn.png" class="logo" style="margin-left: -80px; "/>
+                    </div>
+                    <div class="logo-container">
+                      <img src="assets/images/logo-app.png" alt="EventBeast " class="logo" />
+                      <span class="logo-text">EventBeast</span>
+                    </div>
+                  </a>
+                  
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav mx-auto my-3 my-lg-0">
+                        <a class="nav-link" aria-current="page" href="index.php">Beranda</a>
+                        <a class="nav-link" href="search.html">Pencarian</a>
+                        <a class="nav-link active" href="#">Riwayat</a>
+                        <a class="nav-link" href="#tentang">Tentang Kami</a>
+                    </div>
+                    <div class="d-grid">
+                        <a class="btn-navy" href="login.php">
+                            Masuk
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- END: NAVBAR -->
+
+        <div class="hero">
+            <div class="hero-headline">
+                <span class="text-gradient-pink"> Riwayat </span> Pemesanan Tiket <span class="text-gradient-blue"> Konser </span>
+            </div>
+        </div>
+
+    </header>
+
+<section class="grow-today">
+
+   <div class="events-list">
+        <div class="event-card">
+            <div class="event-content">
+                <img src="assets/images/history-svt.png" alt="Right Here World Tour">
+                <div class="event-info">
+                    <p class="event-name">SEVENTEEN</p>
+                    <p class="event-details"><b>Right Here World Tour Asia</b><br>09 Februari 2025<br>Rp 3.500.000,-</p>
+                    <p class="event-status">Status: <span class="status-paid">Sudah Dibayar</span></p>
+                    <form action="detail.php" method="get">
+                        <button type="submit" class="view-detail">Lihat Detail</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-content">
+                <img src="assets/images/history-niki.png" alt="Buzz World Tour">
+                <div class="event-info">
+                    <p class="event-name">NIKI</p>
+                    <p class="event-details"><b>Buzz World Tour in Jakarta</b><br>23 Februari 2025<br>Rp 1.250.000,-</p>
+                    <p class="event-status">Status: <span class="status-paid">Sudah Dibayar</span></p>
+                    <form action="detail.php" method="get">
+                        <button type="submit" class="view-detail">Lihat Detail</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <footer class="footer bg-navy" style="padding-top: 60px;">
+        <div class="container">
+            
+            <span class="logo-text" style="color: white; font-size: 2rem; font-weight: bold;">EventBeast</span>
+
+            <div class="mt-3 d-flex flex-row flex-wrap footer-content align-items-baseline">
+                <p class="paragraph">
+                    EventBeats adalah platform digital <br class="d-md-block d-none" /> yang menyediakan informasi terkait <br class="d-md-block d-none" /> penjualan tiket untuk berbagai <br class="d-md-block d-none" /> konser di Indonesia.
+    
+                </p>
+                <div class="d-flex flex-column footer-links">
+                    <div class="title-links mb-3">Fitur</div>
+                    <a href="#">Beranda</a>
+                    <a href="#">Pencarian</a>
+                    <a href="history.html">Riwayat</a>
+                    <a href="#">Tentang Kami</a>
+                    <a href="#">Masuk</a>
+                </div>
+
+                    <div class="footer-contact">
+                      <div class="contact-item">
+                        <img src="https://img.icons8.com/?size=100&id=9730&format=png&color=FFFFFF" alt="Phone Icon" class="icon">
+                        <span>+6281319175247</span>
+                      </div>
+                      <div class="contact-item"> 
+                        <img src="https://img.icons8.com/?size=100&id=59813&format=png&color=FFFFFF" alt="Instagram" class="icon">
+                        <span>eventbeats.id</span>
+                      </div>
+                      <div class="contact-item">
+                        <img src="https://img.icons8.com/?size=100&id=85500&format=png&color=FFFFFF" alt="Email" class="icon">
+                        <span>eventbeats@gmail.com</span>
+                      </div>
+                      <div class="contact-item">
+                        <img src="https://img.icons8.com/?size=100&id=2963&format=png&color=FFFFFF" alt="Instagram" class="icon">
+                        <span>eventbeats.com</span>
+                      </div>
+                    </div>
+        </div>
+    </footer>   
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

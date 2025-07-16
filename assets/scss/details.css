@@ -1,0 +1,680 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box; /* Menambahkan box-sizing untuk menghindari masalah padding dan margin */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.back-container {
+    margin-right: 20px;
+    margin-top: 5px; 
+}
+
+.logo {
+    height: 40px;
+}
+
+.logo-text {
+    font-size: 34px;
+    font-weight: bold;
+    color: #ffffff; /* Warna teks putih */
+}
+
+.grow-today {
+  background-color: #f9f9f9; /* Warna latar belakang untuk bagian acara serupa */
+  padding: 100px 0; /* Padding atas dan bawah untuk bagian acara serupa */
+  margin-top: 80px; /* Margin atas untuk bagian acara serupa */
+}
+
+.header-image {
+    margin-bottom: 80px; /* Tambahkan jarak lebih besar pada bagian ini */
+}
+
+.main-btn, .btn-green, .btn-navy {
+    padding: 13px 35px;
+    border-radius: 45px;
+    font-size: 16px;
+    border: 0;
+    text-align: center;
+    text-decoration: none;
+    transition: ease-out 0.3s;
+    outline: none;
+}
+
+.btn-green {
+    color: #151A26;
+    font-weight: 600;
+    background-color: #01FB34;
+    box-shadow: 0px 4px 15px rgba(1, 251, 52, 0.35);
+    margin: 0 auto;
+}
+
+.btn-green:hover {
+    color: initial;
+}
+
+.btn-navy {
+    background-color: #252837;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.btn-navy:hover {
+    color: #FFFFFF;
+}
+
+.btn-navy:focus {
+    outline: 2.5px solid rgba(196, 196, 196, 0.75);
+}
+
+@media (max-width: 992px) {
+    .btn-navy {
+        max-width: 100%;
+    }
+}
+
+.navbar {
+    padding: 20px 0;
+}
+
+.navbar .navbar-nav .nav-link { 
+    color: #A3A5AA;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.navbar .navbar-nav .nav-link.active {
+    color: #FFFFFF;
+    border-bottom: 2px solid #01FB34;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+.navbar .navbar-nav .dropdown-menu {
+    padding: 12px;
+    border-radius: 18px;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 48px;
+}
+
+.navbar .navbar-nav .list-group .list-group-item {
+    background-color: transparent !important;
+    color: #A3A5AA;
+}
+
+@media (min-width: 1000px) {
+    .navbar .navbar-nav .nav-link {
+        margin: 0 30px;
+    }
+}
+
+.footer {
+    background-color: #1a1a2e; /* Warna latar belakang */
+    padding: 20px;
+    text-align: left;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Jarak antar elemen */
+    margin-left: 80px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    color: #A3A5AA; /* Warna teks */
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.contact-item .icon {
+    width: 24px; /* Ukuran ikon */
+    height: 24px;
+    margin-right: 10px; /* Jarak ikon dan teks */
+}
+
+footer {
+    padding: 70px 0;
+}
+
+footer .footer-content {
+    column-gap: 150px; /* Menggunakan column-gap untuk jarak antar kolom */
+    row-gap: 48px;
+}
+
+footer .footer-content .footer-links {
+    font-size: 16px;
+}
+
+footer .footer-content .footer-links .title-links {
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+footer .footer-content .footer-links a {
+    font-weight: 400;
+    color: #A3A5AA;
+    transition: all 0.3s;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+footer .footer-content .footer-links a:hover {
+    color: #FFFFFF;
+}
+
+ .footer-links {
+    margin-bottom: 100px;
+    margin-left: 100px;
+}
+
+footer .all-rights {
+    margin-top: 70px;
+    margin-bottom: 0;
+}
+
+.main-content {
+    padding: 20px; /* Padding untuk konten utama */
+}
+
+.preview-image {
+    background-color: #343d52; /* Warna latar belakang navy untuk gambar */
+    padding: 20px; /* Padding untuk gambar */
+    border-radius: 10px; /* Sudut melengkung untuk gambar */
+}
+
+.img-content {
+    max-width: 100%; /* Membuat gambar responsif */
+    height: auto; /* Tinggi otomatis untuk menjaga rasio */
+    border-radius: 10px; /* Sudut melengkung untuk gambar */
+}
+
+.details-content {
+    margin-top: 20px; /* Margin atas untuk konten detail */
+}
+
+.description {
+    flex: 1; /* Mengatur lebar deskripsi agar fleksibel */
+    margin-right: 20px; /* Margin kanan untuk memberikan jarak antara deskripsi dan kartu */
+}
+
+.headline {
+    font-size: 40px; /* Ukuran font untuk headline */
+    font-weight: 600; /* Ketebalan font untuk headline */
+    color: #FFFFFF; /* Warna teks putih untuk headline */
+    margin-bottom: 80px; /* Margin bawah untuk headline */
+    line-height: 60px;
+    margin-left: 130px;
+}
+
+.text-gradient-pink {
+    background-color: #F32FB8; /* Warna latar belakang untuk teks gradient */
+    background-image: linear-gradient(113.4deg, #F32FB8 0%, #FDD7BE 100%);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.event-details h6 {
+    font-size: 30px; /* Ukuran font untuk subjudul */
+    color: #000000; /* Warna teks navy untuk subjudul  TENTANG*/
+    font-weight: normal; 
+    margin-top: 25px;
+    margin-bottom: 20px; /* Margin bawah untuk subjudul */
+}
+
+.details-paragraph {
+    font-size: 20px; /* Ukuran font untuk deskripsi */
+    color: #000000; /* Warna teks navy untuk deskripsi */
+    line-height: 2; /* Jarak antar baris untuk deskripsi */
+    font-weight: normal; /* Mengatur ketebalan   font menjadi normal */
+    margin-bottom: 30px; /* Margin bawah untuk memberikan jarak antara deskripsi dan elemen berikutnya */
+    width: 750px;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.card-event {
+    background-color: #ffffff; /* Warna latar belakang putih untuk kartu */
+    border-radius: 10px; /* Sudut melengkung untuk kartu */
+    padding: 30px; /* Padding untuk kartu */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+    width: 350px; /* Lebar tetap untuk kartu */
+    margin: 20px; /* Margin untuk memberikan jarak antar kartu */
+}
+
+.card-event h6 {
+    margin: 50; /* Menghapus margin untuk judul */
+    color: #000000; /* Warna teks navy untuk judul */
+    font-weight: bold; /* Ketebalan font untuk judul */
+    font-size: 25px;
+}
+
+
+.card-event .img-content {
+    width: 50px; /* Ukuran gambar profil */
+    height: 50px; /* Ukuran gambar profil */
+    border-radius: 50%; /* Membuat gambar profil menjadi bulat */
+}
+
+.desc {
+    color: #151A26; /* Warna teks navy untuk nama artis */
+    font-size: 20px; /* Ukuran font untuk nama artis */
+    font-weight: 500; /* Ketebalan font untuk nama artis */
+}
+
+.price {
+    font-size: 30px; /* Ukuran font untuk harga */
+    font-weight: bold; /* Ketebalan font untuk harga */
+    color: #000000; /* Warna teks navy untuk harga */
+}
+
+.card-details {
+    color: #000000; /* Warna teks navy untuk detail */
+    font-size: 18px; /* Ukuran font untuk detail */
+    line-height: 40px;
+}
+.beli {
+    font-size: 50px;
+    margin-left: 90px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.card-details img {
+    width: 30px; /* Ukuran ikon */
+    height: 30px; /* Ukuran ikon */
+}
+
+.btn-green {
+    background-color:#01FB34;; /* Warna latar belakang tombol */
+    color: #000000; /* Warna teks tombol */
+    padding: 15px 40px; /* Padding untuk tombol */
+    border: none; /* Menghapus border */
+    border-radius: 25px; /* Sudut mele  ngkung untuk tombol */
+    cursor: pointer; /* Men unjukkan bahwa tombol dapat diklik */
+    margin-top: 50px; /* Jarak atas tombol */
+    margin-bottom: 30px; /* Jarak bawah tombol */
+}
+
+.header {
+    height: 880px; /* Tinggi header */
+}
+
+.header .hero {
+    padding: 100px 0; /* Padding untuk bagian hero */
+    text-align: center; /* Mengatur teks menjadi rata tengah */
+}
+
+.header .hero .hero-headline {
+    font-size: 45px; /* Ukuran font untuk headline hero */
+    font-weight: 600; /* Ketebalan font untuk headline hero */
+    color: #FFFFFF; /* Warna teks putih untuk headline hero */
+    line-height: 70px; /* Jarak antar baris untuk headline hero */
+}
+
+.header .hero .hero-paragraph {
+    margin: 30px 0; /* Margin untuk paragraf hero */
+    font-size: 16px; /* Ukuran font untuk paragraf hero */
+    font-weight: 400; /* Ketebalan font untuk paragraf hero */
+    line-height: 30px; /* Jarak antar baris untuk paragraf hero */
+    color: #FFFFFF; /* Warna teks untuk paragraf hero */
+}
+
+.header .header-image {
+    overflow: hidden; /* Mencegah gambar meluap dari kontainer */
+}
+
+.header .header-image .img-1 {
+    width: 662px !important; /* Ukuran gambar 1 */
+    height: 410px !important; /* Tinggi gambar 1 */
+}
+
+.header .header-image .img-2 {
+    width: 838px !important; /* Ukuran gambar 2 */
+    height: 520px !important; /* Tinggi gambar 2 */
+}
+
+.brand-partner {
+    padding: 314px 0 100px; /* Padding untuk bagian partner merek */
+}
+
+.brand-partner p {
+    font-weight: 500; /* Ketebalan font untuk teks partner */
+    font-size: 20px; /* Ukuran font untuk teks partner */
+    color: #A3A5AA; /* Warna teks untuk teks partner */
+    margin-bottom: 30px; /* Margin bawah untuk teks partner */
+}
+
+.brand-partner div {
+    column-gap: 70px; /* Jarak antar kolom */
+    row-gap: 35px; /* Jarak antar baris */
+}
+
+.text-gradient-blue {
+    background-color: #00A0F5; /* Warna latar belakang untuk teks gradient biru */
+    background-image: linear-gradient(113.4deg, #00A0F5 0%, #00F7E6 100%); /* Gradient biru */
+    background-size: 100%; /* Ukuran latar belakang */
+    background-repeat: no-repeat; /* Tidak mengulang latar belakang */
+    background-clip: text; /* Memotong latar belakang ke teks */
+    -webkit-background-clip: text; /* Untuk dukungan webkit */
+    -webkit-text-fill-color: transparent; /* Mengisi warna teks menjadi transparan */
+    -moz-background-clip: text; /* Untuk dukungan mozilla */
+    -moz-text-fill-color: transparent; /* Mengisi warna teks menjadi transparan */
+}
+
+.text-gradient-pink {
+    background-color: #F32FB8; /* Warna latar belakang untuk teks gradient pink */
+    background-image: linear-gradient(113.4deg, #F32FB8 0%, #FDD7BE 100%); /* Gradient pink */
+    background-size: 100%; /* Ukuran latar belakang */
+    background-repeat: no-repeat; /* Tidak mengulang latar belakang */
+    background-clip: text; /* Memotong latar belakang ke teks */
+    -webkit-background-clip: text; /* Untuk dukungan webkit */
+    -webkit-text-fill-color: transparent; /* Mengisi warna teks menjadi transparan */
+    -moz-background-clip: text; /* Untuk dukungan mozilla */
+    -moz-text-fill-color: transparent; /* Mengisi warna teks menjadi transparan */
+}
+
+.bg-navy {
+    background-color: #151A26; /* Warna latar belakang navy */
+}
+
+.title {
+    font-size: 25px; /* Ukuran font untuk judul */
+    color: #151A26; /* Warna teks untuk judul */
+    font-weight: 500; /* Ketebalan font untuk judul */
+}
+
+.sub-title {
+  font-size: 50px; /* Ukuran font untuk subjudul */
+  font-weight: 600; /* Ketebalan font untuk subjudul */
+  margin-top: 20px; /* Jarak atas subjudul */
+  margin-bottom: 1px; /* Jarak bawah subjudul */
+}
+
+.paragraph, .statistics p {
+    font-size: 16px; /* Ukuran font untuk paragraf */
+    font-weight: 400; /* Ketebalan font untuk paragraf */
+    color: #A3A5AA; /* Warna teks untuk paragraf */
+    line-height: 30px; /* Jarak antar baris untuk paragraf */
+    margin: 30px 0; /* Margin untuk paragraf */
+}
+
+.grow-today {
+  background-color: #FFFFFF; /* Warna latar belakang untuk bagian acara serupa */
+  padding: 100px 0; /* Padding atas dan bawah untuk bagian acara serupa */
+  margin-top: -50px; /* Mengurangi margin atas untuk bagian acara serupa */
+  margin-bottom: 5px; /* Tambahkan margin bawah jika diperlukan */
+}
+
+.events {
+    display: flex; /* Mengatur kontainer acara menjadi flex */
+    flex-direction: row; /* Mengatur arah flex menjadi horizontal */
+    overflow-x: auto; /* Menambahkan scroll horizontal jika konten melebihi lebar kontainer */
+    gap: 20px; /* Jarak antar kartu */
+    padding: 20px; /* Padding untuk kontainer */
+}
+
+.event-card {
+  position: relative; /* Untuk posisi label "Baru" */
+  background-color: #FFFFFF; /* Warna latar belakang untuk kartu acara */
+  border-radius: 20px; /* Sudut melengkung untuk kartu acara */
+  padding: 20px; /* Padding untuk kartu acara */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek kedalaman */
+  text-align: left; /* Mengatur teks di dalam kartu menjadi rata kiri */
+  width: 300px; /* Lebar tetap untuk kartu acara */
+  height: auto; /* Tinggi otomatis untuk menjaga rasio */
+  max-width: 100%; /* Memastikan kartu tidak melebihi lebar kontainer */
+  flex-shrink: 0; /* Mencegah kartu menyusut */
+  margin: 10px; /* Menambahkan margin untuk memberikan jarak antar kartu */
+  margin-top: -0px; /* Menggunakan margin negatif untuk mengangkat kartu */
+}
+
+.event-card img{
+    height: 250px;
+    height: 250px;
+}
+
+.new-label {
+    position: absolute; /* Memposisikan label "Baru" */
+    top: 25px; /* Jarak dari atas */
+    right: 20px; /* Jarak dari kanan */
+    background-color: #01FB34; /* Warna latar belakang untuk label */
+    color: #000000; /* Warna teks untuk label */
+    padding: 5px 20px; /* Padding untuk label */
+    border-radius: 25px; /* Sudut melengkung untuk label */
+    font-weight: bold; /* Ketebalan font untuk label */
+}
+
+.event-image {
+    width: 100%; /* Membuat gambar responsif */
+    height: auto; /* Tinggi otomatis untuk menjaga rasio */
+    border-radius: 10px; /* Sudut melengkung untuk gambar */
+    margin-bottom: 15px; /* Margin bawah untuk memisahkan gambar dari teks */
+    display: block; /* Memastikan gambar ditampilkan sebagai blok */
+}
+
+.card-content {
+    display: flex; /* Mengatur konten dalam baris */
+    flex-direction: column; /* Mengatur konten secara vertikal */
+    align-items: flex-start; /* Mengatur konten agar rata kiri */
+}
+
+.card-title {
+    font-weight: 550; /* Ketebalan font untuk judul kartu acara */
+    font-size: 18px; /* Ukuran font untuk judul kartu acara */
+    color: #151A26; /* Warna teks untuk judul kartu acara */
+    margin: 0 0 5px 0; /* Mengatur margin bawah untuk judul */
+}
+
+.speaker-name {
+    color: #151A26; /* Warna teks untuk nama artis */
+    font-size: 16px; /* Ukuran font untuk nama artis */
+    font-weight: 500; /* Ketebalan font untuk nama artis */
+    margin: 0 0 5px 0; /* Mengatur margin bawah untuk nama artis */
+}
+
+.event-location {
+    color: #151A26; /* Warna teks untuk lokasi */
+    font-size: 16px; /* Ukuran font untuk lokasi */
+    font-weight: 500; /* Ketebalan font untuk lokasi */
+    margin: 0 0 5px 0; /* Mengatur margin bawah untuk lokasi */
+}
+
+.event-date-time {
+    font-size: 14px; /* Ukuran font untuk tanggal dan waktu */
+    color: #151A26; /* Warna teks untuk tanggal dan waktu */
+    margin: 0; /* Menghapus margin untuk tanggal dan waktu */
+}
+
+.stories {
+    padding: 100px 0 70px; /* Padding untuk bagian cerita */
+}
+
+.stories img {
+    margin-right: 100px; /* Margin kanan untuk gambar cerita */
+}
+
+.stories .btn-navy {
+    width: max-content; /* Mengatur lebar tombol */
+}
+
+.statistics {
+    padding: 0 0 100px; /* Padding untuk bagian statistik */
+}
+
+.statistics p {
+    margin: 0; /* Menghapus margin untuk paragraf statistik */
+}
+
+.p-30 {
+    padding: 30px !important; /* Padding untuk elemen dengan kelas p-30 */
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .navbar .navbar -nav .nav-link.active {
+        padding-bottom: 8px;
+        color: #FFFFFF;
+        border-bottom: none;
+    }
+
+    .header .header-image {
+        overflow: hidden; /* Mencegah gambar meluap dari kontainer */
+    }
+
+    .header .header-image .img-1 {
+        width: 301px !important; /* Ukuran gambar 1 untuk layar kecil */
+        height: 175px !important; /* Tinggi gambar 1 untuk layar kecil */
+    }
+
+    .header .header-image .img-2 {
+        width: 389px !important; /* Ukuran gambar 2 untuk layar kecil */
+        height: 230px !important; /* Tinggi gambar 2 untuk layar kecil */
+    }
+
+    .brand-partner {
+        padding: 150px 0 100px; /* Padding untuk bagian partner merek pada layar kecil */
+    }
+
+    .preview-image {
+        height: 750px; /* Mengatur tinggi gambar untuk layar kecil */
+    }
+
+    .details-content .card-event {
+        margin: 0 auto; /* Memusatkan kartu acara */
+    }
+}
+
+@media (max-width: 500px) {
+    .preview-image {
+        height: 650px; /* Mengatur tinggi gambar untuk layar sangat kecil */
+    }
+
+    .details-content {
+        margin-top: 0; /* Menghapus margin negatif */
+    }
+
+    .details-content .description {
+        max-width: 100%; /* Memastikan deskripsi tidak melebihi lebar layar */
+    }
+}
+
+.checkout {
+    padding: 100px 0; /* Padding untuk bagian checkout */
+    color: #FFFFFF; /* Warna teks untuk checkout */
+}
+
+.checkout .checkout-title, .checkout .event-details h5 {
+    font-size: 32px; /* Ukuran font untuk judul checkout */
+    font-weight: 600; /* Ketebalan font untuk judul checkout */
+}
+
+.checkout .event-details {
+    margin-top: 70px; /* Margin atas untuk detail acara */
+    margin-bottom: 50px; /* Margin bawah untuk detail acara */
+}
+
+.checkout .event-details .event-image {
+    border-radius: 30px; /* Sudut melengkung untuk gambar acara */
+    object-fit: cover; /* Memastikan gambar terpotong dengan baik */
+    width: 100%; /* Membuat gambar responsif */
+    max-width: 280px; /* Batas lebar gambar */
+    height: auto; /* Menyesuaikan tinggi berdasarkan lebar */
+}
+
+.checkout .event-details h5 {
+    font-size: 28px; /* Ukuran font untuk judul detail acara */
+    line-height: 40px; /* Jarak antar baris untuk judul detail acara */
+}
+
+.checkout .event-details span {
+    font-size: 16px; /* Ukuran font untuk span dalam detail acara */
+    font-weight: 400; /* Ketebalan font untuk span dalam detail acara */
+}
+
+.checkout .event-details .total-price {
+    border-bottom: 5px double #FFFFFF; /* Garis bawah untuk total harga */
+    font-weight: 700; /* Ketebalan font untuk total harga */
+    font-size: 42px; /* Ukuran font untuk total harga */
+    margin-left: 70px; /* Margin kiri untuk total harga */
+}
+
+.event-details{
+    margin-top: 5%;
+}
+.checkout form .form-title {
+    font-size: 20px; /* Ukuran font untuk judul form */
+    margin-bottom: 30px; /* Margin bawah untuk judul form */
+}
+
+.checkout form .form-title span {
+    font-weight: 400; /* Ketebalan font untuk span dalam judul form */
+    color: #A3A5AA; /* Warna teks untuk span dalam judul form */
+}
+
+.checkout form .form-title div {
+    font-weight: 500; /* Ketebalan font untuk div dalam judul form */
+}
+
+.checkout form input.form-control {
+    padding: 13px 16px; /* Padding untuk input form */
+    background-color: transparent; /* Latar belakang transparan untuk input */
+    border: 1px solid #FFFFFF; /* Border putih untuk input */
+    border-radius: 14px; /* Sudut melengkung untuk input */
+    color: #FFFFFF !important; /* Warna teks putih untuk input */
+}
+
+.checkout form .footer-payment {
+    margin-top: 100px; /* Margin atas untuk footer pembayaran */
+}
+
+.checkout form .footer-payment .btn-green {
+    width: 231px; /* Lebar tombol pembayaran */
+    text-decoration: none; /* Menghapus dekorasi teks pada tombol */
+}
+
+.checkout form .footer-payment span {
+    font-size: 14px; /* Ukuran font untuk span dalam footer pembayaran */
+    font-weight: 400; /* Ketebalan font untuk span dalam footer pembayaran */
+}
+
+.login.header {
+    height: auto; /* Tinggi otomatis untuk header login */
+}
+
+.form-login {
+    background-color: #FFFFFF; /* Warna latar belakang untuk form login */
+    border-radius: 24px; /* Sudut melengkung untuk form login */
+    padding: 24px 24px 30px; /* Padding untuk form login */
+    row-gap: 20px; /* Jarak antar elemen dalam form login */
+    width: 100%; /* Lebar penuh untuk form login */
+    max-width: 460px; /* Batas lebar untuk form login */
+}
+
+.form-login input {
+    padding: 13px 16px; /* Padding untuk input dalam form login */
+    border-radius: 14px; /* Sudut melengkung untuk input dalam form login */
+    border: 1.5px solid #151A26; /* Border untuk input dalam form login */
+}
+
+.form-login input:focus {
+    box-shadow: none; /* Menghapus bayangan saat fokus */
+    border-color: #01FB34; /* Mengubah warna border saat fokus */
+}  

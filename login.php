@@ -1,0 +1,151 @@
+<?php
+session_start();
+include 'db.php';
+
+// Variabel untuk menyimpan pesan error
+
+// Fungsi untuk cek apakah user sudah login sebagai admin
+function isAdminLoggedIn() {
+    return isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true;
+}
+
+// Fungsi untuk cek apakah user biasa sudah login
+function isUserLoggedIn() {
+    return isset($_SESSION['user_id']);
+}
+$error_message = ''; 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
+    $email = $conn->real_escape_string($_POST['email']);
+    $password = $_POST['password'];
+
+    // Query untuk mencari user berdasarkan email
+    $query = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
+    $result = $conn->query($query);
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+
+        // Verifikasi password (tanpa hash untuk versi ini)
+        if ($password === $user['password']) {
+            // Cek apakah user adalah admin berdasarkan email
+            if ($user['email'] === 'admin@gmail.com') {
+                // Set sesi untuk admin
+                $_SESSION['is_admin'] = true;
+                $_SESSION['user_email'] = $user['email'];
+                header("Location: admin-add-events.php");
+                exit();
+            } else {
+                // Set sesi untuk user biasa
+                $_SESSION['user_id'] = $user['id_user'];
+                $_SESSION['user_email'] = $user['email'];
+                $_SESSION['first_name'] = $user['first_name'];
+                $_SESSION['last_name'] = $user['last_name'];
+                $_SESSION['is_admin'] = false;
+                header("Location: index.php");
+                exit();
+            }
+        } else {
+            $error_message = 'Password salah!';
+        }
+    } else {
+        $error_message = 'Email tidak ditemukan!';
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semina | Sign In</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+    <!-- START: NAVBAR -->
+    <section class="bg-navy">
+        <nav class="container navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.php">
+                    <div class="logo-container">
+                        <img src="assets/images/logo-app.png" alt="EventBeast" class="logo" />
+                        <span class="logo-text">EventBeast</span>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav mx-auto my-3 my-lg-0">
+                        <a class="nav-link" aria-current="page" href="index.php">Beranda</a>
+                        <a class="nav-link" href="search-user.php">Pencarian</a>
+                        <a class="nav-link" href="history-user.php">Riwayat</a>
+                        <a class="nav-link" href="index.php#tentang">Tentang Kami</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <!-- END: NAVBAR -->
+
+    <section class="login header bg-navy">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center hero gap-5">
+                <div>
+                    <div class="hero-headline text-start">
+                        Masuk
+                    </div>
+                    
+
+                </div>
+                
+                <form method="POST" action="" class="form-login d-flex flex-column mt-4 mt-md-0 p-30">
+                <!--<form action="login.php" method="POST" class="form-login d-flex flex-column mt-4 mt-md-0 p-30">-->
+                    <div class="d-flex flex-column align-items-start">
+                        <label for="first_name" class="form-label">Nama Depan</label>
+                        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Masukkan nama depan" required>
+                    </div>
+                    <div class="d-flex flex-column align-items-start">
+                        <label for="email_address" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="email_address" placeholder="Masukkan email" required>
+                    </div>
+                    <div class="d-flex flex-column align-items-start">
+                        <label for="password" class="form-label">Kata Sandi (6 karakter)</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Masukkan kata sandi Anda" required>
+                    </div>
+                    <div class="d-grid mt-2 gap-4">
+                        <button type="submit" class="btn-green" name="login">Masuk</button>
+                        <a href="signup.html" class="btn-navy">Buat Akun</a>
+                    </div>
+                </form>
+
+                
+
+                <!-- Tampilkan pesan error jika ada -->
+                <?php if ($error_message): ?>
+                    <script type="text/javascript">
+                        alert('<?php echo $error_message; ?>');
+                    </script>
+                <?php endif; ?>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

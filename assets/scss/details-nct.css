@@ -1,0 +1,167 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+    background-color: #f8f9fa; /* Light background color */
+    color: #333; /* Dark text color */
+}
+
+h1, h2, h3, h6 {
+    color: #2c3e50; /* Darker color for headings */
+}
+
+.title-1 span {
+    font-weight: bold;      /* Menjadikan teks bold */
+    font-size: 2.5rem;        /* Ukuran font default */
+    position: relative;     /* Agar bisa diatur posisinya */
+    top: -500px;                 /* Posisi default */
+    transition: all 0.3s;   /* Transisi halus */
+}
+
+.paragraph-1 {
+    font-size: 2.5rem; /* Ukuran font untuk paragraf */
+    line-height: 1.6;  /* Jarak antar baris teks */
+    margin-top: -700px;  /* Jarak atas pada paragraf */
+    margin-bottom: 20px; /* Jarak bawah pada paragraf */
+    padding-left: 50px;  /* Jarak kiri */
+    padding-right: 1500px; /* Jarak kanan */
+    text-align: justify; /* Membuat teks rata kiri dan kanan */
+    text-justify: inter-word; /* Menjaga jarak antar kata */
+    color: #333; /* Warna teks default, bisa disesuaikan */
+}
+
+
+/*atur foto*/
+img[src="assets/images/poster1-wte.png"] {
+    transform: translateY(-800px);  /* Menggeser gambar ke bawah 20px */
+}
+
+/* Main Content Styles */
+.event-detail-page {
+    padding: 40px 0; /* Padding for main content */
+}
+
+.details-content h6 {
+    font-size: 3rem; /* Ukuran font untuk subjudul */
+    font-weight: 600; /* Menebalkan font subjudul */
+    margin-bottom: 10px; /* Jarak bawah subjudul */
+    padding-left: 50px;  /* Jarak kiri */
+    padding-right: 1500px; /* Jarak kanan */
+    color: #333; /* Warna teks subjudul */
+}
+
+.details-content ul li {
+    font-size: 3rem; /* Ukuran font untuk list item */
+    margin-bottom: 8px; /* Jarak antar item list */
+    padding-left: 20px;  /* Jarak kiri */
+    padding-right: 1500px; /* Jarak kanan */
+    color: #555; /* Warna teks item list */
+}
+
+.card-grow {
+    border: 1px solid #e0e0e0; /* Light border for cards */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.card-grow:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.card-content {
+    padding: 15px; /* Padding inside card */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Title size */
+    font-weight: bold; /* Bold title */
+}
+
+.card-subtitle {
+    font-size: 1rem; /* Subtitle size */
+    color: #7f8c8d; /* Gray color for subtitle */
+}
+
+.description {
+    font-size: 0.9rem; /* Description size */
+}
+
+/* Button Styles */
+.btn-navy {
+    background-color: #003366; /* Navy button color */
+    color: #ffffff; /* White text */
+    border: none; /* No border */
+}
+
+.btn-navy:hover {
+    background-color: #00509e; /* Lighter navy on hover */
+}
+
+.btn-green {
+    background-color: #28a745; /* Green button color */
+    color: #ffffff; /* White text */
+    border: none; /* No border */
+}
+
+.btn-green:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #003366; /* Navy color */
+    color: #ffffff; /* White text */
+    padding: 40px 0; /* Padding for footer */
+}
+
+.footer .logo-text {
+    font-size: 2rem; /* Logo text size */
+    font-weight: bold; /* Bold logo text */
+}
+
+.footer-content {
+    margin-top: 20px; /* Margin for footer content */
+}
+
+.footer-links a {
+    color: #ffffff; /* White color for footer links */
+    text-decoration: none; /* No underline */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer-contact {
+    margin-top: 20px; /* Margin for footer contact */
+}
+
+.footer-contact .contact-item {
+    display: flex; /* Flexbox for contact items */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Margin between items */
+}
+
+.footer-contact .icon {
+    width: 30px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header {
+        text-align: center; /* Center header text on small screens */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Stack nav links vertically */
+    }
+
+    .event-detail-page {
+        padding: 20px 0; /* Less padding on small screens */
+    }
+
+    .footer {
+        text-align: center; /* Center footer text on small screens */
+    }
+}
