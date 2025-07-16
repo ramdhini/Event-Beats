@@ -1,7 +1,8 @@
 # EventBeats: Sistem Pemesanan Tiket Konser Online
 
-
 EventBeats adalah aplikasi berbasis web yang menyediakan layanan pemesanan tiket konser yang komprehensif untuk semua acara di seluruh Indonesia. Dirancang untuk memberikan akses tanpa hambatan bagi pengguna, mulai dari penemuan acara hingga pembelian tiket, EventBeats menjadikan pengalaman mencari dan mendapatkan tiket konser menjadi lebih mudah dan menyenangkan.
+
+![image alt](https://github.com/ramdhini/Event-Beats/blob/7e6f4d0441fe208a2913b68fb18f4cca44120d65/EventBeats.png)
 
 ## Fitur Utama
 
