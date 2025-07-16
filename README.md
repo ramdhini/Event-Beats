@@ -20,76 +20,88 @@ EventBeats adalah aplikasi berbasis web yang menyediakan layanan pemesanan tiket
 * **Backend:**
     * PHP 
 * **Database:**
-    * MySQL 
+    * MySQL
 
 ## Persyaratan Sistem
 
-Untuk menjalankan sistem ini, Anda memerlukan lingkungan server web dan database yang sesuai. Rekomendasi:
+Untuk menjalankan sistem EventBeats ini, Anda memerlukan lingkungan server web yang mendukung PHP dan MySQL. Rekomendasi:
 
 * **Web Server:** Apache atau Nginx
-* **Bahasa Pemrograman Backend:** (Sebutkan versi PHP/Node.js/Python yang sesuai)
-* **Database:** (Sebutkan versi MySQL/PostgreSQL yang sesuai)
-* **XAMPP/WAMP/MAMP:** Direkomendasikan untuk pengembangan lokal (jika menggunakan PHP/MySQL).
+* **PHP:** Versi 7.x atau lebih tinggi 
+* **MySQL:** Versi 5.x atau lebih tinggi
+* **XAMPP/WAMP/MAMP:** Direkomendasikan untuk pengembangan dan pengujian lokal karena sudah bundling Apache, MySQL, dan PHP dalam satu paket instalasi.
 
 ## Instalasi
 
-Ikuti langkah-langkah di bawah ini untuk menginstal dan menjalankan EventBeats di lingkungan lokal Anda:
+Ikuti langkah-langkah di bawah ini untuk menginstal dan menjalankan Sistem Pemesanan Tiket Konser Online EventBeats di lingkungan lokal Anda:
 
 1.  **Clone Repository:**
+    Buka Git Bash atau terminal Anda, lalu jalankan perintah berikut:
     ```bash
-    git clone [https://github.com/namauseranda/EventBeats.git](https://github.com/namauseranda/EventBeats.git)
-    # Ganti '[https://github.com/namauseranda/EventBeats.git](https://github.com/namauseranda/EventBeats.git)' dengan URL repositori Anda yang sebenarnya
+    git clone [https://github.com/ramdhini/EventBeats.git](https://github.com/ramdhini/EventBeats.git)
     ```
-    Atau unduh file ZIP dari repositori.
+    Atau Anda juga dapat mengunduh file ZIP dari repositori GitHub.
 
 2.  **Pindahkan ke Direktori Web Server:**
-    * Jika menggunakan XAMPP, pindahkan folder `EventBeats` ke `C:\xampp\htdocs\`.
-    * *(Sertakan instruksi serupa untuk WAMP/MAMP jika relevan)*
-    * *(Jika menggunakan Node.js/Python backend, instruksinya akan berbeda, misalnya `cd EventBeats` lalu `npm install` atau `pip install -r requirements.txt`)*
+    * Setelah di-clone/diunduh, pindahkan folder `Event-Beats` ke direktori root dokumen server web lokal Anda:
+        * Jika menggunakan **XAMPP**, pindahkan ke `C:\xampp\htdocs\`.
+        * Jika menggunakan **WAMP**, pindahkan ke `C:\wamp64\www\`.
+        * Jika menggunakan **MAMP**, pindahkan ke direktori `htdocs` MAMP Anda.
 
-3.  **Konfigurasi Environment (Jika Ada):**
-    * Buat file `.env` (jika menggunakan framework) atau sesuaikan file konfigurasi yang ada (misalnya `config.php`, `database.js`).
-    * Atur koneksi database dan variabel lingkungan lainnya.
+3.  **Buat Database:**
+    * Buka peramban web Anda dan akses phpMyAdmin (biasanya melalui `http://localhost/phpmyadmin`).
+    * Buat database baru dengan nama **`eventbeast`**.
 
-4.  **Buat Database:**
-    * Buka tool manajemen database Anda (misalnya phpMyAdmin untuk MySQL).
-    * Buat database baru dengan nama `eventbeats_db` (atau nama lain yang Anda inginkan).
+4.  **Impor Database:**
+    * Pilih database `eventbeast` yang baru Anda buat di phpMyAdmin.
+    * Klik tab `Import` pada navigasi atas.
+    * Pilih file SQL database `eventbeast.sql` yang seharusnya ada di dalam folder proyek `Event-Beats` Anda.
+    * Klik tombol `Go` untuk memulai proses impor tabel.
 
-5.  **Impor Database:**
-    * Pilih database yang baru Anda buat.
-    * Impor file SQL database (misalnya, `database.sql` atau `eventbeats.sql`) yang ada di folder proyek Anda.
+5.  **Konfigurasi Koneksi Database:**
+    * Buka file konfigurasi koneksi database Anda `db.php` di dalam folder proyek `Event-Beats` Anda menggunakan editor teks.
+    * Pastikan isinya sudah sesuai dengan pengaturan database lokal Anda. Contoh:
+        ```php
+        <?php
+$host = 'localhost';
+$user = 'root'; 
+$password = ''; 
+$dbname = 'eventbeast';
+
+$conn = new mysqli($host, $user, $password, $dbname);
+
+if ($conn->connect_error) {
+    die('Koneksi gagal: ' . $conn->connect_error);
+}
+?>
+        ```
+        (Tidak ada perubahan yang diperlukan jika file Anda sudah seperti di atas dan nama database Anda adalah `eventbeast`, karena sudah sesuai dengan pengaturan XAMPP/WAMP default dan nama database.)
 
 6.  **Akses Aplikasi:**
-    * Buka browser web Anda dan navigasi ke `http://localhost/EventBeats/` (sesuaikan jika nama folder Anda berbeda).
-    * *(Jika menggunakan Node.js/Python backend dengan server terpisah, sebutkan portnya, misal `http://localhost:3000` setelah menjalankan server)*
+    * Setelah semua langkah di atas selesai, buka peramban web Anda.
+    * Navigasi ke URL: `http://localhost/Event-Beats/` (sesuaikan jika Anda mengganti nama folder proyek Anda).
 
 ## Kredensial Default (Contoh)
 
-* **Admin:**
-    * Username: `admin@eventbeats.com`
-    * Password: `admin123` (atau sesuai dengan yang diatur di database/saat instalasi)
+Untuk tujuan pengujian setelah instalasi, Anda dapat menggunakan kredensial default berikut:
 
-* **Pengguna (Kustomer):**
-    * Username: `user@example.com`
-    * Password: `password123` (atau sesuai dengan yang diatur di database/saat instalasi)
+* **Pengguna:**
+    * Username: `dhini@gmail.com` *(Contoh, sesuaikan dengan data di database Anda)*
+    * Password: `password2` *(Contoh, sesuaikan dengan data di database Anda)*
 
-*(Pastikan untuk mengubah kredensial default setelah instalasi untuk keamanan!)*
+*(**Penting:** Demi keamanan, sangat disarankan untuk segera mengubah kredensial default ini setelah instalasi berhasil.)*
 
 ## Kontribusi
 
-Kontribusi untuk pengembangan EventBeats sangat diharapkan! Jika Anda ingin berkontribusi, silakan fork repositori ini, buat branch fitur Anda sendiri, dan ajukan pull request.
+Kontribusi disambut baik! Jika Anda ingin berkontribusi, silakan fork repositori ini dan buat pull request dengan fitur atau perbaikan Anda.
 
-## Lisensi
 
-Proyek ini dilisensikan di bawah Lisensi MIT. Lihat file [LICENSE](LICENSE) untuk detail selengkapnya.
 
 ## Kontak
 
 Jika Anda memiliki pertanyaan, saran, atau ingin melaporkan masalah, silakan hubungi:
 
-* [Nama Anda / Tim Anda] - [Alamat Email Anda]
-* [Link Profil GitHub Anda (opsional)]
-* [Link Website Proyek (opsional)]
+* [Ramdhini] - [ramdhininovita0811@gmail.com]
 
----
-_Disiapkan dengan semangat untuk konser oleh Tim EventBeats_
+
+
